@@ -33,6 +33,8 @@ $(function() {
 
 // GALLERY
 
+$('.gallery-image').fancybox();
+
 var pages       = document.querySelectorAll('.gallery-page');
 var noOfPages   = pages.length;
 var prevPage    = document.querySelector('#prev-page');

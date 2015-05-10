@@ -8,10 +8,10 @@
     <title>TJY Films</title>
     <?php if($_SERVER['SERVER_NAME'] == 'tjy.dev'): ?>
         <link rel="stylesheet" type="text/css" href="/css/styles.css"/>
-        <link rel="stylesheet" type="text/css" href="/css/lightbox.css"/>
+        <link rel="stylesheet" type="text/css" href="/css/fancybox.css"/>
     <?php else: ?>
         <link rel="stylesheet" type="text/css" href="/build/styles.min.css"/>
-        <link rel="stylesheet" type="text/css" href="/build/lightbox.min.css"/>
+        <link rel="stylesheet" type="text/css" href="/build/fancybox.min.css"/>
     <?php endif; ?>
     <link rel="shortcut icon" href="/img/favicon.ico"/>
     <link rel="apple-touch-icon-precomposed" href="/img/touchicon-57.png">
@@ -88,7 +88,7 @@
                         foreach($images as $image):
                     ?>
 
-                    <a href="/content/gallery/<?= $image; ?>" class="gallery-image" data-lightbox="gallery" style="background-image: url(/content/gallery/<?= $image; ?>);"></a>
+                    <a href="/content/gallery/<?= $image; ?>" class="gallery-image" data-fancybox-group="gallery" style="background-image: url(/content/gallery/<?= $image; ?>);"></a>
 
                     <?php
                             $i++;
@@ -207,11 +207,11 @@
 
     <?php if($_SERVER['SERVER_NAME'] == 'tjy.dev'): ?>
         <script src="/js/jquery.min.js"></script>
-        <script src="/js/lightbox.js"></script>
+        <script src="/js/fancybox.js"></script>
         <script src="/js/scripts.js"></script>
     <?php else: ?>
         <script src="/build/jquery.min.js"></script>
-        <script src="/build/lightbox.min.js"></script>
+        <script src="/build/fancybox.min.js"></script>
         <script src="/build/scripts.min.js"></script>
     <?php endif; ?>
 
