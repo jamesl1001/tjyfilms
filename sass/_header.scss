@@ -1,0 +1,39 @@
+#logo {
+    width: 165px;
+}
+
+header {
+    background-image: url(/img/bkg-header.jpg);
+    margin-top: 40px;
+    padding: 40px 0;
+    text-align: center;
+
+    h1 {
+        display: none;
+    }
+
+    h2 {
+        margin: 40px 0 0;
+        color: $white;
+        font-size: 16px;
+        font-weight: 400;
+        text-shadow: 0 2px 5px rgba(0,0,0,.3);
+    }
+}
+
+@media (min-width: 640px) {
+    header {
+        padding: 80px 0;
+
+        h2 {
+            margin: 80px 0 0;
+            font-size: 26px;
+        }
+    }
+}
+
+@media (min-width: 640px) {
+    #logo {
+        width: 315px;
+    }
+}

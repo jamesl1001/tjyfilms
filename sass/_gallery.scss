@@ -1,0 +1,68 @@
+#gallery {
+    background-image: url(/img/bkg-gallery.jpg);
+}
+
+.gallery {
+    width: 60%;
+    margin: 0 auto;
+}
+
+.gallery-page {
+    display: none;
+}
+
+.gallery-page--show {
+    display: block;
+}
+
+.gallery-image {
+    width: 44%;
+    width: calc(50% - 10px);
+    height: 100px;
+    background-color: $grey;
+    background-position: center;
+    background-size: cover;
+    box-shadow: 0 2px 5px rgba(0,0,0,.3);
+    transition: box-shadow .3s, transform .3s cubic-bezier(0, 1.7, .8, 1.7);
+
+    &:nth-child(odd) {
+        margin-right: 5px;
+        float: left;
+    }
+
+    &:nth-child(even) {
+        margin-left: 5px;
+        float: right;
+    }
+
+    // First two children
+    &:nth-child(-n+2) {
+        margin-bottom: 20px;
+    }
+
+    &:hover,
+    &:focus {
+        box-shadow: 0 5px 5px rgba(0,0,0,.2);
+        transform: scale(1.05);
+    }
+}
+
+@media (min-width: 640px) {
+    .gallery-image {
+        width: 44%;
+        width: calc(50% - 40px);
+        height: 200px;
+
+        &:nth-child(odd) {
+            margin-right: 20px;
+        }
+
+        &:nth-child(even) {
+            margin-left: 20px;
+        }
+
+        &:nth-child(-n+2) {
+            margin-bottom: 80px;
+        }
+    }
+}

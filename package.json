@@ -1,0 +1,19 @@
+{
+  "name": "tjyfilms",
+  "version": "1.0.0",
+  "description": "Themos James Yiacoupis. Video Producer, Editor and Camera Operator",
+  "main": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "James Alexander Lee",
+  "license": "BSD-2-Clause",
+  "devDependencies": {
+    "grunt": "~0.4.5",
+    "grunt-autoprefixer": "~3.0.0",
+    "grunt-contrib-cssmin": "~0.10.0",
+    "grunt-contrib-sass": "~0.7.3",
+    "grunt-contrib-uglify": "~0.5.0",
+    "grunt-contrib-watch": "~0.6.1"
+  }
+}

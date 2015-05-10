@@ -1,0 +1,29 @@
+footer {
+    height: 40px;
+    background: $grey;
+    box-shadow: 0 0 10px $dgrey;
+    position: relative;
+    z-index: 2;
+    color: $white;
+    font-size: 9px;
+    text-align: center;
+    line-height: 40px;
+
+    a {
+        border-bottom: 1px solid $white;
+        color: $white;
+        transition: color 1s, border 1s;
+
+        &:hover,
+        &:focus {
+            border-bottom-color: $yellow;
+            color: $yellow;
+        }
+    }
+}
+
+@media (min-width: 640px) {
+    footer {
+        font-size: 11px;
+    }
+}

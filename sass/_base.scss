@@ -1,0 +1,95 @@
+* {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    min-width: 320px;
+    margin: 0;
+    font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+    font-weight: 300;
+}
+
+.centre {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+
+    &:after {
+        content: '';
+        display: table;
+        clear: both;
+    }
+}
+
+section {
+    padding: 40px 0;
+}
+
+.section--grey {
+    background: $grey;
+    position: relative;
+    color: $white;
+
+    &:before,
+    &:after {
+        content: '';
+        width: 100%;
+        height: 5px;
+        background: $yellow;
+        background: linear-gradient(to right, $grey 0%, $yellow 50%, $grey 100%); 
+        position: absolute;
+    }
+
+    &:before {
+        top: 0;
+    }
+
+    &:after {
+        bottom: 0;
+    }
+}
+
+.section--image {
+    background-position: center;
+    background-size: cover;
+    color: $white;
+}
+
+.section--contact:after {
+    display: none;
+}
+
+// http://precisepixels.co.uk/blog/2014/01/30/checkbox-hack-problem-with-android-2-3/
+.force-repaint { -webkit-animation: force-repaint infinite 1s; }
+
+@-webkit-keyframes force-repaint {
+    from { fill: 0; }
+    to   { fill: 0; }
+}
+
+@media (min-width: 640px) {
+    .centre {
+        padding: 0 40px;
+    }
+
+    section {
+        padding: 80px 0;
+    }
+
+    .left,
+    .right {
+        width: 50%;
+    }
+
+    .left {
+        padding-right: 40px;
+        float: left;
+    }
+
+    .right {
+        padding-left: 40px;
+        float: right;
+    }
+}

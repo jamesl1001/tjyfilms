@@ -1,0 +1,47 @@
+#references {
+    background-image: url(/img/bkg-references.jpg);
+}
+
+.h1--references {
+    margin-bottom: 10px;
+    text-shadow: 0 2px 5px rgba(0,0,0,.3);
+    font-family: Times New Roman;
+    font-size: 68px;
+    line-height: 46px;
+}
+
+.reference {
+    width: 90%;
+    height: 0;
+    margin: 0 auto;
+    opacity: 0;
+    text-align: justify;
+    text-shadow: 0 2px 5px rgba(0,0,0,.3);
+    transition: opacity .3s;
+
+    span {
+        font-style: italic;
+    }
+}
+
+.reference--show {
+    height: auto;
+    opacity: 1;
+}
+
+@media (min-width: 640px) {
+    .h1--references {
+        font-size: 110px;
+        line-height: 74px;
+    }
+
+    .reference {
+        width: 70%;
+    }
+}
+
+@media (min-width: 1000px) {
+    .reference {
+        width: 60%;
+    }
+}

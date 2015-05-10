@@ -1,0 +1,97 @@
+.contact-bubble {
+    width: 50%;
+    float: left;
+    position: relative;
+
+    a {
+        width: 140px;
+        height: 140px;
+        border: 0;
+        margin: 0 auto;
+        display: block;
+        position: relative;
+        cursor: pointer;
+        text-align: center;
+
+        i {
+            width: 40px;
+            height: 40px;
+            background-image: url(/img/icons.png);
+            background-repeat: no-repeat;
+            background-size: 210px;
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            margin-left: -20px;
+            z-index: 2;
+            transition: top .3s;
+        }
+
+        span {
+            position: relative;
+            z-index: 2;
+            color: $white;
+            line-height: 170px;
+            transition: color .3s;
+        }
+
+        &:after {
+            content: '';
+            width: 40px;
+            height: 40px;
+            background: $white;
+            border-radius: 50%;
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            margin-left: -20px;
+            transition: all .3s cubic-bezier(0, 1.2, .8, 1.2);
+        }
+
+        &:hover,
+        &:focus {
+            i {
+                top: 30px;
+            }
+
+            span {
+                color: $grey;
+            }
+
+            &:after {
+                width: 140px;
+                height: 140px;
+                background: $yellow;
+                top: 0;
+                left: 0;
+                margin: 0;
+            }
+        }
+    }
+}
+
+.icon-email {
+    background-position: -55px center;
+}
+
+.icon-phone {
+    background-position: -85px center;
+}
+
+.icon-facebook {
+    background-position: -115px center;
+}
+
+.icon-twitter {
+    background-position: -145px center;
+}
+
+.icon-youtube {
+    background-position: -175px center;
+}
+
+@media (min-width: 720px) {
+    .contact-bubble {
+        width: 20%;
+    }
+}
