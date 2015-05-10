@@ -21,6 +21,9 @@
         margin: 10px 0 20px;
         font-size: 14px;
         font-weight: 400;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
         transition: color 1s;
     }
 
