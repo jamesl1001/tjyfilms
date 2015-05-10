@@ -79,6 +79,8 @@ showImage();
 
 // FILMS
 
+$('.film').fancybox();
+
 var films         = document.querySelector('.films');
 var showMoreFilms = document.querySelector('#show-more-films');
 var loading       = false;

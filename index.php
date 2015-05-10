@@ -123,7 +123,7 @@
                     $id    = $film->snippet->resourceId->videoId;
                 ?>
 
-                <a href="https://www.youtube.com/watch?v=<?= $id; ?>" target="_blank" class="film">
+                <a href="https://www.youtube.com/embed/<?= $id; ?>?autoplay=1" target="_blank" class="film" data-fancybox-type="iframe">
                     <div class="film-thumb left" style="background-image: url(https://i.ytimg.com/vi/<?= $id; ?>/hqdefault.jpg);"></div>
                     <div class="film-text right">
                         <h2><?= $title; ?></h2>
