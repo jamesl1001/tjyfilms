@@ -1,0 +1,11 @@
+.about-text {
+    width: 90%;
+    margin: 0 auto 20px;
+    text-align: center;
+}
+
+@media (min-width: 640px) {
+    .about-text {
+        width: 70%;
+    }
+}

@@ -69,8 +69,7 @@
     <section id="about" class="section--grey">
         <div class="centre">
             <h1>ABOUT</h1>
-            <p class="left">Since a young age I have always had a huge passion for all areas of film and television. I graduated with a degree in drama and multimedia, and a Masters in Arts Criticism at the University of Kent to widen my knowledge and expertise in this field. I have worked with people on various arts projects from different positions, educating myself on all the necessary aspects.</p>
-            <p class="right">I have experience with filming and editing promotional videos, documentaries, arts performances, showreels, trailers, large corporate events, etc. If you are interested in having a video created for business, personal, or any use at all, please don't hesitate to contact me to discuss things in further detail.</p>
+            <p class="about-text">I work as an independent freelance video producer as both a cameraman and video editor, but I am also available for hiring with a crew. I have a degree in drama and multimedia and a masters in arts criticism. I have experience with filming and editing promotional videos, documentaries, arts performances, showreels, trailers, large corporate events, etc. If you are interested in having a video created for business, personal, or any use at all, please don't hesitate to contact me to discuss things in further detail.</p>
         </div>
     </section>
 
