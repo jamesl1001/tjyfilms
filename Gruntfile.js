@@ -17,8 +17,8 @@ module.exports = function(grunt) {
                 dest: 'build/styles.min.css'
             },
             minify2: {
-                src: 'css/lightbox.css',
-                dest: 'build/lightbox.min.css'
+                src: 'css/fancybox.css',
+                dest: 'build/fancybox.min.css'
             }
         },
         sass: {
