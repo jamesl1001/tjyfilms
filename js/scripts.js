@@ -79,7 +79,10 @@ showImage();
 
 // FILMS
 
-$('.film').fancybox();
+$('.film').fancybox({
+    width: '90%',
+    height: '90%'
+});
 
 var films         = document.querySelector('.films');
 var showMoreFilms = document.querySelector('#show-more-films');
