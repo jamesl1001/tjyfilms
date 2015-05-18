@@ -70,10 +70,7 @@
         <div class="centre">
             <h1>ABOUT</h1>
             <p class="about-text">
-                <?php
-                    $file = file_get_contents('content/about.txt');
-                    echo nl2br($file);
-                ?>
+                <?= nl2br(file_get_contents('content/about.txt')); ?>
             </p>
         </div>
     </section>
