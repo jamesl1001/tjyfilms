@@ -1,0 +1,19 @@
+#fourohfour {
+    height: 90vh;
+    height: calc(100vh - 40px);
+}
+
+.p--404 {
+    text-align: center;
+
+    a {
+        color: $white;
+        border-bottom: 1px solid $white;
+        transition: color 1s, border 1s;
+
+        &:hover {
+            color: $yellow;
+            border-bottom: 1px solid $yellow;
+        }
+    }
+}

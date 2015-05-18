@@ -166,7 +166,7 @@
         </div>
     </section>
 
-    <section id="contact" class="section--grey section--contact">
+    <section id="contact" class="section--grey section--last">
         <div class="centre">
             <h1>CONTACT</h1>
             <div class="contact-bubble">
