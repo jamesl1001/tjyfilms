@@ -113,7 +113,7 @@
 
             <div class="films">
                 <?php
-                $feed          = json_decode(file_get_contents('https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&fields=items/snippet(title,description,resourceId/videoId)&maxResults=3&playlistId=PLMXyjfVfVjP_B4QqAVtrZpnuLwT2b1ECf&key=AIzaSyBELBZGR3o2VjqSOSzKYfBLkCliPgWns3U'));
+                $feed = json_decode(file_get_contents('https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&fields=items/snippet(title,description,resourceId/videoId)&maxResults=3&playlistId=PLMXyjfVfVjP_B4QqAVtrZpnuLwT2b1ECf&key=AIzaSyBELBZGR3o2VjqSOSzKYfBLkCliPgWns3U'));
 
                 foreach($feed->items as $film):
                     $title = $film->snippet->title;
