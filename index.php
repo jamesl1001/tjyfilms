@@ -113,8 +113,7 @@
 
             <div class="films">
                 <?php
-                $feed          = json_decode(file_get_contents('https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&fields=nextPageToken,items/snippet(title,description,resourceId/videoId)&maxResults=4&playlistId=PLMXyjfVfVjP_B4QqAVtrZpnuLwT2b1ECf&key=AIzaSyBELBZGR3o2VjqSOSzKYfBLkCliPgWns3U'));
-                $nextPageToken = (isset($feed->nextPageToken) ? $feed->nextPageToken : '');
+                $feed          = json_decode(file_get_contents('https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&fields=items/snippet(title,description,resourceId/videoId)&maxResults=3&playlistId=PLMXyjfVfVjP_B4QqAVtrZpnuLwT2b1ECf&key=AIzaSyBELBZGR3o2VjqSOSzKYfBLkCliPgWns3U'));
 
                 foreach($feed->items as $film):
                     $title = $film->snippet->title;
@@ -135,7 +134,7 @@
                 ?>
             </div>
 
-            <div id="show-more-films" data-nextpagetoken="<?= $nextPageToken; ?>">SHOW MORE FILMS</div>
+            <a href="all-films" id="show-all-films">SHOW ALL FILMS</a>
         </div>
     </section>
 
