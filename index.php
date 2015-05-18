@@ -69,7 +69,12 @@
     <section id="about" class="section--grey">
         <div class="centre">
             <h1>ABOUT</h1>
-            <p class="about-text">I work as an independent freelance video producer as both a cameraman and video editor, but I am also available for hiring with a crew. I have a degree in drama and multimedia and a masters in arts criticism. I have experience with filming and editing promotional videos, documentaries, arts performances, showreels, trailers, large corporate events, etc. If you are interested in having a video created for business, personal, or any use at all, please don't hesitate to contact me to discuss things in further detail.</p>
+            <p class="about-text">
+                <?php
+                    $file = file_get_contents('content/about.txt');
+                    echo nl2br($file);
+                ?>
+            </p>
         </div>
     </section>
 
