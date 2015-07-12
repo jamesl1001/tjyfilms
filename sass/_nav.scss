@@ -48,7 +48,7 @@ nav {
         width: 40px;
         height: 40px;
         background-image: url(/img/icons.png);
-        background-position: -2px center;
+        background-position: 1px center;
         background-repeat: no-repeat;
         background-size: 270px;
         position: absolute;
@@ -79,7 +79,7 @@ nav {
 }
 
 #nav-toggle:checked ~ #nav-icon:after {
-    background-position: -47px center;
+    background-position: -38px center;
 }
 
 #nav-toggle:checked ~ #nav-overlay {
