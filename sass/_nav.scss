@@ -78,6 +78,10 @@ nav {
     height: 280px;
 }
 
+#nav-toggle:checked + #nav.nav--small {
+    height: 80px;
+}
+
 #nav-toggle:checked ~ #nav-icon:after {
     background-position: -38px center;
 }

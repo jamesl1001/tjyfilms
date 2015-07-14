@@ -45,7 +45,7 @@
     <a href="http://browsehappy.com/" target="_blank" id="ie">Please upgrade to a modern browser.</a>
     <![endif]-->
     <input type="checkbox" name="nav-toggle" id="nav-toggle">
-    <nav id="nav" class="force-repaint" role="navigation">
+    <nav id="nav" class="force-repaint nav--small" role="navigation">
         <div class="centre">
             <a href="/#films" class="nav-a--back">&lt; BACK</a>
         </div>
