@@ -92,13 +92,13 @@
                     <a href="/content/gallery/<?= $image; ?>" class="gallery-image" data-fancybox-group="gallery" style="background-image: url(/content/gallery/<?= $image; ?>);"></a>
 
                     <?php
-                            $i++;
-                            if($i % 4 == 1 && !($i + 1 == count($images))):
+                            if($i % 4 == 0 && !($i == count($images))):
                     ?>
                 </div>
                 <div class="gallery-page">
                     <?php
                             endif;
+                            $i++;
                         endforeach;
                     ?>
                 </div>
