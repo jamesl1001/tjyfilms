@@ -53,7 +53,7 @@
     <label for="nav-toggle" id="nav-icon" class="force-repaint"></label>
     <div id="nav-overlay" class="force-repaint"></div>
 
-    <section id="films" class="section--grey section--last">
+    <section id="all-films" class="section--grey section--last">
         <div class="centre">
             <h1>ALL FILMS</h1>
 
