@@ -84,43 +84,6 @@ $('.film').fancybox({
     height: '90%'
 });
 
-var films         = document.querySelector('.films');
-var showMoreFilms = document.querySelector('#show-more-films');
-var loading       = false;
-
-showMoreFilms.addEventListener('click', function() {
-    if(!loading) {
-        showMoreFilms.className = 'show-more-films--loading';
-        var request = new XMLHttpRequest();
-        request.open('GET', '/php/getFilms.php?nextPageToken=' + showMoreFilms.getAttribute('data-nextpagetoken'), true);
-
-        request.onload = function() {
-            if(request.status >= 200 && request.status < 400) {
-                var split = request.responseText.split('~~~');
-
-                if(split[0]) {
-                    showMoreFilms.setAttribute('data-nextpagetoken', split[0]);
-                    loading = false;
-                    showMoreFilms.className = '';
-                } else {
-                    showMoreFilms.parentNode.removeChild(showMoreFilms);
-                }
-
-                films.insertAdjacentHTML('beforeend', split[1]);
-            }
-        };
-
-        request.onerror = function() {
-            loading = false;
-            showMoreFilms.className = '';
-        };
-
-        request.send();
-
-        loading = true;
-    }
-});
-
 
 // REFERENCES
 

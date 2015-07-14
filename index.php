@@ -69,7 +69,9 @@
     <section id="about" class="section--grey">
         <div class="centre">
             <h1>ABOUT</h1>
-            <p class="about-text">I work as an independent freelance video producer as both a cameraman and video editor, but I am also available for hiring with a crew. I have a degree in drama and multimedia and a masters in arts criticism. I have experience with filming and editing promotional videos, documentaries, arts performances, showreels, trailers, large corporate events, etc. If you are interested in having a video created for business, personal, or any use at all, please don't hesitate to contact me to discuss things in further detail.</p>
+            <p class="about-text">
+                <?= nl2br(file_get_contents('content/about.txt')); ?>
+            </p>
         </div>
     </section>
 
@@ -90,13 +92,13 @@
                     <a href="/content/gallery/<?= $image; ?>" class="gallery-image" data-fancybox-group="gallery" style="background-image: url(/content/gallery/<?= $image; ?>);"></a>
 
                     <?php
-                            $i++;
-                            if($i % 4 == 1 && !($i + 1 == count($images))):
+                            if($i % 4 == 0 && !($i == count($images))):
                     ?>
                 </div>
                 <div class="gallery-page">
                     <?php
                             endif;
+                            $i++;
                         endforeach;
                     ?>
                 </div>
@@ -113,8 +115,7 @@
 
             <div class="films">
                 <?php
-                $feed          = json_decode(file_get_contents('https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&fields=nextPageToken,items/snippet(title,description,resourceId/videoId)&maxResults=4&playlistId=PLMXyjfVfVjP_B4QqAVtrZpnuLwT2b1ECf&key=AIzaSyBELBZGR3o2VjqSOSzKYfBLkCliPgWns3U'));
-                $nextPageToken = (isset($feed->nextPageToken) ? $feed->nextPageToken : '');
+                $feed = json_decode(file_get_contents('https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&fields=items/snippet(title,description,resourceId/videoId)&maxResults=3&playlistId=PLMXyjfVfVjP_B4QqAVtrZpnuLwT2b1ECf&key=AIzaSyBELBZGR3o2VjqSOSzKYfBLkCliPgWns3U'));
 
                 foreach($feed->items as $film):
                     $title = $film->snippet->title;
@@ -135,7 +136,7 @@
                 ?>
             </div>
 
-            <div id="show-more-films" data-nextpagetoken="<?= $nextPageToken; ?>">SHOW MORE FILMS</div>
+            <a href="all-films" id="show-all-films">SHOW ALL FILMS</a>
         </div>
     </section>
 
