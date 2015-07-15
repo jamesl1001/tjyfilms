@@ -55,7 +55,7 @@
         <div id="nav-overlay" class="force-repaint"></div>
 
         <section id="all-films" class="section--grey section--last">
-            <div class="centre">
+            <div class="centre centre--wide">
                 <h1>ALL FILMS</h1>
 
                 <div class="films">
