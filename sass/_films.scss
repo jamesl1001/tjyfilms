@@ -56,6 +56,44 @@
     }
 }
 
+.films {
+    font-size: 0;
+}
+
+.film-small {
+    width: 46%;
+    margin: 2%;
+    display: inline-block;
+    vertical-align: top;
+    color: $white;
+
+    .film-small-thumb {
+        width: 100%;
+        height: 0;
+        padding-bottom: 55%;
+        background-position: center;
+        background-size: cover;
+        transition: transform .3s cubic-bezier(0, 1.7, .8, 1.7);
+    }
+
+    .film-small-text {
+        width: 100%;
+        font-size: 12px;
+        font-weight: 300;
+        transition: color 1s;
+    }
+
+    &:hover .film-small-thumb,
+    &:focus .film-small-thumb {
+        transform: scale(1.05);
+    }
+
+    &:hover h2,
+    &:focus h2 {
+        color: $yellow;
+    }
+}
+
 #show-all-films {
     height: 30px;
     background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACEAAAAGCAYAAABNTffhAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAKJJREFUeNpi/P///3QGBgZtID4AxIeB+BgQf2WgHeAGYisgtgViByC+xgh0xD0gQxFJ0W8gPgPEh6D4CBB/osBSXqiFdlBsAsSsSPL3QY4QQ1IEcpkOEDMhKfoLxOehoXQA6qh3eCwVhJpnDzXTEIiZkeT/AfEVqFkgTx4GOYJSQ64DsSYlnsDmCFKD8w8Qs1ASncQ4glDCEgbit5QkbIAAAwBnB0GBzF74/gAAAABJRU5ErkJggg==);
@@ -103,8 +141,26 @@
         }
     }
 
+    .film-small {
+        width: 29%;
+
+        .film-small-text {
+            font-size: 14px;
+        }
+    }
+
     #show-all-films {
         height: 40px;
         font-size: 14px;
+    }
+}
+
+@media (min-width: 1000px) {
+    .film-small {
+        width: 21%;
+
+        .film-small-text {
+            font-size: 16px;
+        }
     }
 }
