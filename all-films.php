@@ -41,53 +41,55 @@
     <![endif]-->
 </head>
 <body>
-    <!--[if lt IE 9]>
-    <a href="http://browsehappy.com/" target="_blank" id="ie">Please upgrade to a modern browser.</a>
-    <![endif]-->
-    <input type="checkbox" name="nav-toggle" id="nav-toggle">
-    <nav id="nav" class="force-repaint nav--small" role="navigation">
-        <div class="centre">
-            <a href="/#films" class="nav-a--back">&lt; BACK</a>
-        </div>
-    </nav>
-    <label for="nav-toggle" id="nav-icon" class="force-repaint"></label>
-    <div id="nav-overlay" class="force-repaint"></div>
-
-    <section id="all-films" class="section--grey section--last">
-        <div class="centre">
-            <h1>ALL FILMS</h1>
-
-            <div class="films">
-                <?php
-                function getAllFilms($nextPageToken) {
-                    $feed          = json_decode(file_get_contents('https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&fields=nextPageToken,items/snippet(title,resourceId/videoId)&maxResults=50&pageToken=' . $nextPageToken . '&playlistId=PLMXyjfVfVjP_B4QqAVtrZpnuLwT2b1ECf&key=AIzaSyBELBZGR3o2VjqSOSzKYfBLkCliPgWns3U'));
-                    $nextPageToken = (isset($feed->nextPageToken) ? $feed->nextPageToken : '');
-
-                    foreach($feed->items as $film):
-                        $title = $film->snippet->title;
-                        $id    = $film->snippet->resourceId->videoId;
-                ?>
-
-                <a href="https://www.youtube.com/embed/<?= $id; ?>?autoplay=1" target="_blank" class="film-small" data-fancybox-type="iframe">
-                    <div class="film-small-thumb" style="background-image: url(https://i.ytimg.com/vi/<?= $id; ?>/hqdefault.jpg);"></div>
-                    <h2 class="film-small-text"><?= $title; ?></h2>
-                </a>
-
-                <?php
-                        endforeach;
-
-                        if(!empty($nextPageToken)) {
-                            getAllFilms($nextPageToken);
-                        }
-                    }
-
-                    getAllFilms('');
-                ?>
+    <div id="wrapper">
+        <!--[if lt IE 9]>
+        <a href="http://browsehappy.com/" target="_blank" id="ie">Please upgrade to a modern browser.</a>
+        <![endif]-->
+        <input type="checkbox" name="nav-toggle" id="nav-toggle">
+        <nav id="nav" class="force-repaint nav--small" role="navigation">
+            <div class="centre">
+                <a href="/#films" class="nav-a--back">&lt; BACK</a>
             </div>
-        </div>
-    </section>
+        </nav>
+        <label for="nav-toggle" id="nav-icon" class="force-repaint"></label>
+        <div id="nav-overlay" class="force-repaint"></div>
 
-    <footer>Site by <a href="http://jalproductions.co.uk" target="_blank">JaL Productions</a></footer>
+        <section id="all-films" class="section--grey section--last">
+            <div class="centre">
+                <h1>ALL FILMS</h1>
+
+                <div class="films">
+                    <?php
+                    function getAllFilms($nextPageToken) {
+                        $feed          = json_decode(file_get_contents('https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&fields=nextPageToken,items/snippet(title,resourceId/videoId)&maxResults=50&pageToken=' . $nextPageToken . '&playlistId=PLMXyjfVfVjP_B4QqAVtrZpnuLwT2b1ECf&key=AIzaSyBELBZGR3o2VjqSOSzKYfBLkCliPgWns3U'));
+                        $nextPageToken = (isset($feed->nextPageToken) ? $feed->nextPageToken : '');
+
+                        foreach($feed->items as $film):
+                            $title = $film->snippet->title;
+                            $id    = $film->snippet->resourceId->videoId;
+                    ?>
+
+                    <a href="https://www.youtube.com/embed/<?= $id; ?>?autoplay=1" target="_blank" class="film-small" data-fancybox-type="iframe">
+                        <div class="film-small-thumb" style="background-image: url(https://i.ytimg.com/vi/<?= $id; ?>/hqdefault.jpg);"></div>
+                        <h2 class="film-small-text"><?= $title; ?></h2>
+                    </a>
+
+                    <?php
+                            endforeach;
+
+                            if(!empty($nextPageToken)) {
+                                getAllFilms($nextPageToken);
+                            }
+                        }
+
+                        getAllFilms('');
+                    ?>
+                </div>
+            </div>
+        </section>
+
+        <footer>Site by <a href="http://jalproductions.co.uk" target="_blank">JaL Productions</a></footer>
+    </div>
 
     <?php if($_SERVER['SERVER_NAME'] == 'tjy.dev'): ?>
         <script src="/js/jquery.min.js"></script>
