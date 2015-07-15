@@ -60,21 +60,17 @@
             <div class="films">
                 <?php
                 function getAllFilms($nextPageToken) {
-                    $feed          = json_decode(file_get_contents('https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&fields=nextPageToken,items/snippet(title,description,resourceId/videoId)&maxResults=50&pageToken=' . $nextPageToken . '&playlistId=PLMXyjfVfVjP_B4QqAVtrZpnuLwT2b1ECf&key=AIzaSyBELBZGR3o2VjqSOSzKYfBLkCliPgWns3U'));
+                    $feed          = json_decode(file_get_contents('https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&fields=nextPageToken,items/snippet(title,resourceId/videoId)&maxResults=50&pageToken=' . $nextPageToken . '&playlistId=PLMXyjfVfVjP_B4QqAVtrZpnuLwT2b1ECf&key=AIzaSyBELBZGR3o2VjqSOSzKYfBLkCliPgWns3U'));
                     $nextPageToken = (isset($feed->nextPageToken) ? $feed->nextPageToken : '');
 
                     foreach($feed->items as $film):
                         $title = $film->snippet->title;
-                        $desc  = $film->snippet->description;
                         $id    = $film->snippet->resourceId->videoId;
                 ?>
 
-                <a href="https://www.youtube.com/embed/<?= $id; ?>?autoplay=1" target="_blank" class="film" data-fancybox-type="iframe">
-                    <div class="film-thumb left" style="background-image: url(https://i.ytimg.com/vi/<?= $id; ?>/hqdefault.jpg);"></div>
-                    <div class="film-text right">
-                        <h2><?= $title; ?></h2>
-                        <p><?= $desc; ?></p>
-                    </div>
+                <a href="https://www.youtube.com/embed/<?= $id; ?>?autoplay=1" target="_blank" class="film-small" data-fancybox-type="iframe">
+                    <div class="film-small-thumb" style="background-image: url(https://i.ytimg.com/vi/<?= $id; ?>/hqdefault.jpg);"></div>
+                    <h2 class="film-small-text"><?= $title; ?></h2>
                 </a>
 
                 <?php
