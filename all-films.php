@@ -99,7 +99,7 @@
         <script src="/build/fancybox.min.js"></script>
     <?php endif; ?>
 
-    <script>$('.film').fancybox({width: '90%',height: '90%'});</script>
+    <script>$('.film-small').fancybox({width: '90%',height: '90%'});</script>
 
     <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
