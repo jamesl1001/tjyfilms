@@ -137,7 +137,7 @@
                     ?>
                 </div>
 
-                <a href="all-films" id="show-all-films">SHOW ALL FILMS</a>
+                <div id="show-all-films-wrapper"><a href="all-films" id="show-all-films">SHOW ALL FILMS</a></div>
             </div>
         </section>
 
